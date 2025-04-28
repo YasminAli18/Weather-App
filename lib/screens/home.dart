@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'weather_screen.dart'; 
-import '../models/weather.dart'; // استدعاء الموديل
-import '../services/http.dart'; // استدعاء خدمة الـ API
+import '../models/weather.dart'; 
+import '../services/http.dart'; 
 
 class WeatherHomeScreen extends StatefulWidget {
   const WeatherHomeScreen({super.key});
@@ -21,7 +21,7 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
     _cityController = TextEditingController();
   }
 
-  // دالة لجلب بيانات الطقس من الـ API
+ 
 Future<void> _getWeatherData(String cityName) async {
   setState(() {
     _isLoading = true;
@@ -30,7 +30,7 @@ Future<void> _getWeatherData(String cityName) async {
   try {
     var weatherObject = await HttpService().getWeatherForecast(cityName);
     
-    print(weatherObject);  // اختبار الطباعة للمتحول weatherObject
+    print(weatherObject); 
 
     setState(() {
       _weatherObject = weatherObject;
@@ -42,7 +42,7 @@ Future<void> _getWeatherData(String cityName) async {
       MaterialPageRoute(
         builder: (context) => WeatherDetailPage(
           weather: _weatherObject!,
-          date: '', // أو التاريخ اللي طالع معاك من الـ API
+          date: '', 
         ),
       ),
     );

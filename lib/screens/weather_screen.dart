@@ -118,15 +118,14 @@ class WeatherDetailPage extends StatelessWidget {
 ),
 
               SizedBox(height: 20),
-
-              // زر العودة
+             
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context); // العودة للصفحة السابقة
+                    Navigator.pop(context); 
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 25, 32, 74), // الكحلي
+                    backgroundColor: const Color.fromARGB(255, 25, 32, 74), 
                     padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -156,7 +155,6 @@ class WeatherDetailPage extends StatelessWidget {
   }
 
   String _formatHour(String time) {
-  // تحويل الوقت من التنسيق الأساسي إلى تنسيق الساعة والدقيقة
   final parsedTime = DateTime.parse(time);
   return '${parsedTime.hour}:${parsedTime.minute.toString().padLeft(2, '0')}';
 }
